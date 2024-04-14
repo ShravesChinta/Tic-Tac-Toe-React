@@ -1,10 +1,10 @@
-##Tic Tac Toe Game in React
+## Tic Tac Toe Game in React
 This is a simple Tic Tac Toe game implemented using React.
 
-#How to Play
+# How to Play
 The game is played on a 3x3 grid. Two players take turns marking spaces in the grid with their respective symbols, 'X' and 'O'. The first player to get three of their symbols in a row, column, or diagonal wins the game. If all spaces are filled and no player has won, the game ends in a draw.
 
-#Code Logic
+# Code Logic
 Components
 TicTacToe: This is the main component of the game. It handles the game state, such as the current board configuration, player turns, and winner determination.
 State
@@ -16,7 +16,7 @@ Functions
 resetGame(): Resets the game state to start a new game.
 toggle(e, index): Handles the click event on each grid box. If the game is not locked and the selected box is empty, it updates the game state with the player's move and checks for a winner.
 checkWin(board): Checks if there is a winner by iterating through all possible winning combinations on the board.
-How to Run
+# How to Run
 To run the game locally:
 
 Clone this repository to your local machine.
