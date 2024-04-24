@@ -1,7 +1,6 @@
+import React, { useState } from "react";
 import circle_icon from "../../assets/circle.png";
 import cross_icon from "../../assets/cross.png";
-import { useState } from "react";
-
 import "./TicTacToe.css";
 
 const TicTacToe = () => {
@@ -17,14 +16,12 @@ const TicTacToe = () => {
     setWinner("");
   };
 
-  const toggle = (e, index) => {
+  const toggle = (index) => {
     if (lock || data[index] !== "") {
       return;
     }
     const newData = [...data];
     newData[index] = count % 2 === 0 ? "x" : "o";
-    const source = count % 2 === 0 ? cross_icon : circle_icon;
-
     setCount(count + 1);
     setLock(true);
     setTimeout(() => {
@@ -62,29 +59,56 @@ const TicTacToe = () => {
   return (
     <div className="container">
       <h1 className="title">
-        Tic Tac Toe Game in <span> React</span>
+        Tic Tac Toe Game in <span>React</span>
       </h1>
       <div className="board">
         <div className="row1">
-          <div className="boxes" onClick={() => toggle(e, 0)}></div>
-          <div className="boxes" onClick={() => toggle(e, 1)}></div>
-          <div className="boxes" onClick={() => toggle(e, 2)}></div>
+          <div className="boxes" onClick={() => toggle(0)}>
+            {data[0] === "x" && <img src={cross_icon} alt="Cross" />}
+            {data[0] === "o" && <img src={circle_icon} alt="Circle" />}
+          </div>
+          <div className="boxes" onClick={() => toggle(1)}>
+            {data[1] === "x" && <img src={cross_icon} alt="Cross" />}
+            {data[1] === "o" && <img src={circle_icon} alt="Circle" />}
+          </div>
+          <div className="boxes" onClick={() => toggle(2)}>
+            {data[2] === "x" && <img src={cross_icon} alt="Cross" />}
+            {data[2] === "o" && <img src={circle_icon} alt="Circle" />}
+          </div>
         </div>
         <div className="row2">
-          <div className="boxes" onClick={() => toggle(e, 3)}></div>
-          <div className="boxes" onClick={() => toggle(e, 4)}></div>
-          <div className="boxes" onClick={() => toggle(5)}></div>
+          <div className="boxes" onClick={() => toggle(3)}>
+            {data[3] === "x" && <img src={cross_icon} alt="Cross" />}
+            {data[3] === "o" && <img src={circle_icon} alt="Circle" />}
+          </div>
+          <div className="boxes" onClick={() => toggle(4)}>
+            {data[4] === "x" && <img src={cross_icon} alt="Cross" />}
+            {data[4] === "o" && <img src={circle_icon} alt="Circle" />}
+          </div>
+          <div className="boxes" onClick={() => toggle(5)}>
+            {data[5] === "x" && <img src={cross_icon} alt="Cross" />}
+            {data[5] === "o" && <img src={circle_icon} alt="Circle" />}
+          </div>
         </div>
         <div className="row3">
-          <div className="boxes" onClick={() => toggle(6)}></div>
-          <div className="boxes" onClick={() => toggle(7)}></div>
-          <div className="boxes" onClick={() => toggle(8)}></div>
+          <div className="boxes" onClick={() => toggle(6)}>
+            {data[6] === "x" && <img src={cross_icon} alt="Cross" />}
+            {data[6] === "o" && <img src={circle_icon} alt="Circle" />}
+          </div>
+          <div className="boxes" onClick={() => toggle(7)}>
+            {data[7] === "x" && <img src={cross_icon} alt="Cross" />}
+            {data[7] === "o" && <img src={circle_icon} alt="Circle" />}
+          </div>
+          <div className="boxes" onClick={() => toggle(8)}>
+            {data[8] === "x" && <img src={cross_icon} alt="Cross" />}
+            {data[8] === "o" && <img src={circle_icon} alt="Circle" />}
+          </div>
         </div>
       </div>
       {winner && (
         <div className="result">
           {winner === "draw" ? (
-            <p>Its a draw!</p>
+            <p>It's a draw!</p>
           ) : (
             <p>{winner.toUpperCase()} wins!</p>
           )}
